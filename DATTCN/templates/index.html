@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/styte.css' %}">
+  <script src="https://kit.fontawesome.com/9e3574538e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    .center {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(230, 239, 245);
+    }
+
+    select,
+    input {
+      appearance: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #ffffff;
+      font-size: 14px;
+      width: 200px;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #4c9aff;
+    }
+
+    .khung div {
+      display: flex;
+      width: 360px;
+      justify-content: space-between;
+      margin: 4px 0;
+    }
+
+    select option {
+      background-color: #fff;
+      color: #000;
+    }
+
+    select option:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    select option:selected {
+      background-color: #4c9aff;
+      color: #fff;
+    }
+
+    /* CSS */
+    .button-27 {
+      appearance: none;
+      background-color: #000000;
+      border: 2px solid #1A1A1A;
+      border-radius: 15px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      font-weight: 600;
+      line-height: normal;
+      margin: 0;
+      min-height: 60px;
+      min-width: 0;
+      outline: none;
+      padding: 16px 24px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 100%;
+      will-change: transform;
+    }
+
+    .button-27:disabled {
+      pointer-events: none;
+    }
+
+    .button-27:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      transform: translateY(-2px);
+    }
+
+    .button-27:active {
+      box-shadow: none;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="center">
+
+  
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="khung" style="display: flex;flex-direction: column;">
+      <h4>Giá dự đoán: {{predict}} tỷ đồng</h4>
+      <div><label for="id_district_quanhuyen">Quận/Huyện:</label>
+        {{form.district_quanhuyen}}</div>
+      <div><label for="id_district_xaphuong">Xã/Phường/Thị Trấn:</label>
+        {{form.district_xaphuong}}</div>
+      <div><label for="id_district_duongpho">Đường/Phố:</label>
+        {{form.district_duongpho}}</div>
+      <div><label for="id_district_duan">Dự án/Khu:</label>
+        {{form.district_duan}}</div>
+      <div><label for="id_district_dientich">Diện tích:</label>
+        {{form.district_dientich}}</div>
+      <div><label for="id_district_phongngu">Số phòng ngủ:</label>
+        {{form.district_phongngu}}</div>
+      <div><label for="id_district_toilet">Số Toilet:</label>
+        {{form.district_toilet}}</div>
+      <button class="button-27" role="button" type="submit">Dự đoán</button>
+    </div>
+  </form>
+  
+</body>
+
+</html>
