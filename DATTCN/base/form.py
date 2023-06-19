@@ -381,6 +381,21 @@ class DistrictForm(forms.Form):
     code_quanhuyen = [ 9, 11,  4, 12,  5,  1,  3,  8,  2,  7,  0, 16, 13, 19, 18, 15, 17,
        14,  6, 10]
     
+   #  quantest = ['quan a']
+   #  code_quan_test = ['500']
+   #  xatest = ['huyen b']
+   #  code_xa_test = ['500']
+   #  duongtest = ['duong c']
+   #  code_duong_test = ['500']
+
+   #  quantest_dict = zip(code_quan_test, quantest)
+   #  huyentest_dict = zip(code_xa_test,xatest)
+   #  duongtest_dict = zip(code_duong_test,duongtest)
+
+   #  district_quantest = forms.ChoiceField(choices=quantest_dict)
+   #  district_huyentest = forms.ChoiceField(choices=huyentest_dict)
+   #  district_duongtest = forms.ChoiceField(choices=duongtest_dict)
+
     
     quanhuyen_dict = zip(code_quanhuyen, quanhuyen)
     xaphuong_dict = zip(code_xaphuong, xaphuong)
